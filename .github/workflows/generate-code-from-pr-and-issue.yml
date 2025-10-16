@@ -1,0 +1,17 @@
+
+name: Generate Code from PR and Issue
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Code from PR and Issue
+        uses: design-arena-gens/generate-code-from-pr-and-issue@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}

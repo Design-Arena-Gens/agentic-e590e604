@@ -1,0 +1,17 @@
+
+name: Generate PR Summary
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate PR Summary
+        uses: design-arena-gens/generate-pr-summary@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}

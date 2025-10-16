@@ -1,0 +1,31 @@
+
+name: Generate Docs on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Docs
+        uses: design-arena-gens/generate-docs@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}
+          template: |
+            ## What's Changed?
+
+            ${{pr.body}}
+
+            ## Screenshots
+
+            ${{pr.screenshots}}
+
+            ## Checklist
+
+            - [ ] I have tested my changes.
+            - [ ] I have updated the documentation.
+            - [ ] I have added a changelog entry.

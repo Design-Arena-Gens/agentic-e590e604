@@ -1,0 +1,17 @@
+
+name: Generate PR Description from Issue
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate PR Description from Issue
+        uses: design-arena-gens/generate-pr-description-from-issue@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}

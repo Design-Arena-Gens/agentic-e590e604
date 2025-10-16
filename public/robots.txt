@@ -1,0 +1,10 @@
+
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# This file is used to prevent search engine crawlers from indexing certain pages of your site.
+# By default, we allow all crawlers to index all pages.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://agentic-e590e604.vercel.app/sitemap.xml

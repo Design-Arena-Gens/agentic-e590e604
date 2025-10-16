@@ -1,0 +1,16 @@
+
+name: Auto Approve
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hmarr/auto-approve-action@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          review-message: "Auto approved"
+          approver: "Design-Arena-Gens"

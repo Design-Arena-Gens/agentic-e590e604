@@ -1,0 +1,17 @@
+
+name: Generate Changelog on Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Changelog on Release
+        uses: design-arena-gens/generate-changelog-on-release@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}

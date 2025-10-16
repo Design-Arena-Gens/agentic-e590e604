@@ -1,0 +1,8 @@
+
+# ads.txt file
+# See https://iabtechlab.com/ads-txt/ for details
+
+# This is a placeholder file.
+# Add your ad system information here.
+# Example:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

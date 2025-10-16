@@ -1,0 +1,16 @@
+
+name: Label Approved
+
+on:
+  pull_request:
+    types: [review_requested, ready_for_review]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ankitvgupta/label-approved@v1.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          approved-label: "approved"
+          add-approved-label: "true"

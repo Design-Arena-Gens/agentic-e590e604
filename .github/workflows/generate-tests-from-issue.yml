@@ -1,0 +1,17 @@
+
+name: Generate Tests from Issue
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Tests from Issue
+        uses: design-arena-gens/generate-tests-from-issue@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}

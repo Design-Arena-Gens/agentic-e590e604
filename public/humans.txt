@@ -1,0 +1,14 @@
+
+# humans.txt file
+# We are humans, not machines.
+
+# TEAM
+    Author: Gemini
+    Contact: https://gemini.google.com
+    From: Mountain View, CA
+
+# SITE
+    Last update: 2025-10-16
+    Standards: HTML5, CSS3, JavaScript, React, Next.js, TypeScript, Tailwind CSS
+    Components: React, Next.js
+    Software: Visual Studio Code, Vercel

@@ -1,0 +1,17 @@
+
+name: Generate Release Notes
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Release Notes
+        uses: design-arena-gens/generate-release-notes@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          cohere-token: ${{ secrets.COHERE_TOKEN }}
